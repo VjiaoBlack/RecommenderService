@@ -7,15 +7,17 @@ list3 = [5,1,2,6,2]
 list4 = [99,99,99,99,99]
 list5 = [5,-1,-2,-4,2]
 
+
+
 def similarity(a,b):
-	d = 0
+	distance = 0
 	zipped = zip(a,b)
 	
 	for x, y in zipped:
-		if x < 0 or y <0:
+		if x < 0 or y < 0:
 			continue
-		d += (x - y) ** 2
-	return  1/math.sqrt((d+1))
+		distance += (x - y) ** 2
+	return  1 / math.sqrt((distance+1))
 
 print similarity(list1,list2)
 print '\n'
