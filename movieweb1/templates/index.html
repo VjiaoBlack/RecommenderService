@@ -1,0 +1,38 @@
+
+<h1>main page</h1>
+
+<h3>Welcome {{user}}</h3>
+
+<!-- Put your movies template here to make things look better -->
+{{movies}}
+
+<form method="post" id="movieadder">
+  <input type="text" name="title">
+  <input type="submit" name="addmovie" value="addamovie" />
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<hr>
+<a href="/rate">Rate or re-rate my movies</a>
+<hr>
+<a href="/listsimilar">Find similar viewers</a>
+<p>
+<a href="/recommend">Find Recommendations</a>
+<hr>
+<a href="/logout">logout</a>
+<a href="/admin">admin</a>
+
+<script>
+
+
+
+</script>

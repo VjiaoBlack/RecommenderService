@@ -1,0 +1,18 @@
+<h1>Please Register</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form method="post">
+  Username: <input type="text", name="name">
+  Password: <input type="text", name="pass">
+  <input type="submit" name="button" value="register">
+  <input type="submit" name="button" value="cancel">
+</form>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+<form method="post">
+  {% for user in users %}
+  Email: {{user.email}} <p>
+  Password: <input type="text" name="{{user.email}}:password" value="{{user.password}}" />
+  <p>
+    Change? <input type="checkbox" name="{{user.email}}:change" value="change" />
+    Delete? <input type="checkbox" name="{{user.email}}:delete" value="delete" />
+    <hr>
+    {% endfor %}
+
+    <input type="submit" name="button" value="submit" />
+    <input type="submit" name="button" value="cancel" />
+</form>
+
+
+<a href="/">home</a>
+
+{% endblock %}

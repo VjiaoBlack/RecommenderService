@@ -1,4 +1,5 @@
 import math
+import db
 
 #Test 5 dimension lists
 list1 = [5,1,2,6,2,1]
@@ -9,9 +10,10 @@ list5 = [5,-1,-2,-4,2,5]
 
 data = [list1, list2, list3, list4, list5]
 
-def similarity(a,b):
+def similarity(a,b): # a is a user, b is just a dictionary.
 	distance = 0
-	zipped = zip(a,b)
+
+	zipped = zip(a,b) # ugh, code this function later
 
 	for x, y in zipped:
 		if x < 0 or y < 0:
@@ -19,13 +21,13 @@ def similarity(a,b):
 		distance += (x - y) ** 2
 	return  1 / math.sqrt((distance+1))
 
-def check(input): #input is a list of length 'x'
+def check(input): #input is a list of length 'x', represents a user
     i = 0
     j = 0
     ans = 0
-    for person in data:
+    for user in getUsers(): #is getusers right
         j += 1
-        if similarity(person, input) > ans:
+        if similarity(user, input) > ans:
             ans = similarity(person, input)
             i = j
 
